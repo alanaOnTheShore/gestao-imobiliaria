@@ -3,9 +3,9 @@ API REST desenvolvida em Node.js e MySQL para gestão e consultas de dados imobi
 Projeto integrador para a disciplina de Hands On Work VII do curso de Análise e Desenvolvimento de Sistemas.
 
 ## 🛠️ Tecnologias Utilizadas
-**Runtime**: Node.js
-**Framework Web**: Express
-**Banco de Dados**: MySQL (mysql2)
+**Runtime**: Node.js  
+**Framework Web**: Express  
+**Banco de Dados**: MySQL (mysql2)  
 **Documentação**: Swagger UI (swagger-ui-express + yamljs)
 
 ## 🗄️ Banco de Dados
