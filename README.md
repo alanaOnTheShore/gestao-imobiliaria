@@ -1,5 +1,5 @@
 # 🏢 API - Sistema Imobiliário (HOW VII)
-API REST desenvolvida em Node.js e MySQL para gestão e consultas de dados imobiliários, documentada via Swagger/OpenAPI.
+API REST desenvolvida em Node.js e MySQL para gestão e consultas de dados imobiliários, documentada via Swagger/OpenAPI.  
 Projeto integrador para a disciplina de Hands On Work VII do curso de Análise e Desenvolvimento de Sistemas.
 
 ## 🛠️ Tecnologias Utilizadas
@@ -14,23 +14,23 @@ O banco de dados (gestao_imobiliaria) foi planejado e estruturado pela equipe pa
 ## 🔌 Endpoints
 📍 Rotas Disponíveis
 
-*GET /pagamentos*
+*GET /pagamentos*  
 Retorna a lista detalhada de pagamentos contendo ID da venda, data, valor, código do imóvel, descrição do imóvel e tipo do imóvel.
 Retorno: JSON
 
-*GET /api-how-vii*
+*GET /api-how-vii*  
 Interface interativa da documentação Swagger (OpenAPI lido do arquivo how-vii.yaml).
 
 ## 📌 Próximas Atualizações (Em desenvolvimento)
-Endpoints em fase de implementação para alimentação de gráficos analíticos:
+Endpoints em fase de implementação para alimentação de gráficos analíticos:  
 
 - Gráfico A: Soma de todos os pagamentos por ID do imóvel.
 - Gráfico B: Total financeiro de vendas consolidado por mês/ano.
 - Gráfico C: Percentual quantitativo de vendas por tipo de imóvel na série histórica.
 
 ## 💻 Como Rodar
-*Bash*
-**Clone o projeto**
+*Bash*  
+**Clone o projeto**  
 git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
 
