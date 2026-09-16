@@ -9,7 +9,8 @@ Projeto integrador para a disciplina de Hands On Work VII do curso de Análise e
 **Documentação**: Swagger UI (swagger-ui-express + yamljs)
 
 ## 🗄️ Banco de Dados
-O banco de dados (gestao_imobiliaria) foi planejado e estruturado pela equipe para relacionar imóveis, seus respectivos tipos e os históricos de pagamentos efetuados.
+O banco de dados (gestao_imobiliaria) foi planejado e estruturado pela equipe para relacionar imóveis, seus respectivos tipos e os históricos de pagamentos efetuados.  
+![MER do banco de dados](./MER.png)
 
 ## 🔌 Endpoints
 📍 Rotas Disponíveis
