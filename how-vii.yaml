@@ -1,0 +1,165 @@
+openapi: 3.0.3
+info:
+  title: Imobiliária How VII
+  description: API para consulta de dados dos imóveis.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:4040
+
+paths:
+  /pagamentos_por_imovel:
+    get:
+      summary: Valor acumulado de pagamentos de cada imóvel.
+      description: Exibe um gráfico de barras com o valor acumulado em pagamentos por imóvel,considerando toda a série histórica disponível.
+      operationId: get_pagamentos_por_imovel
+      tags:
+        - Rendimento individual
+      responses:
+        "200":
+          description: Valor acumulado de pagamentos de cada imóvel.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PagamentoImovel"
+        "404":
+          description: Nenhum imóvel e/ou pagamento encontrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Nenhum imóvel e/ou pagamento encontrado.
+        "500":
+          description: Erro interno do servidor.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Erro interno do servidor. Por favor, tente novamente mais tarde.
+
+  /pagamentos_por_mes_ano:
+    get:
+      summary: Valor total de vendas no mês/ano.
+      description: Exibe um gráfico de linhas com o valor acumulado em pagamentos por mês e ano.
+      operationId: get_pagamentos_por_mes_ano
+      tags:
+        - Comparativo mensal
+      responses:
+        "200":
+          description: Valor total de vendas no mês/ano.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PagamentoMesAno"
+        "404":
+          description: Nenhum pagamento encontrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Nenhum pagamento encontrado.
+        "500":
+          description: Erro interno do servidor.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Erro interno do servidor. Por favor, tente novamente mais tarde.
+
+  /porcentagem_por_tipo_imovel:
+    get:
+      summary: Porcentagem do valor das vendas por tipo de imóvel.
+      description: Exibe para cada tipo de imóvel a porcentagem de vendas considerando toda a série histórica disponível.
+      operationId: get_porcentagem_por_tipo_imovel
+      tags:
+        - Estatísticas
+      responses:
+        "200":
+          description: Porcentagem do valor das vendas por tipo de imóvel.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PorcentagemTipoImovel"
+        "404":
+          description: Nenhum pagamento encontrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Nenhum pagamento encontrado.
+        "500":
+          description: Erro interno do servidor.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Erro interno do servidor. Por favor, tente novamente mais tarde.
+
+components:
+  schemas:
+    PagamentoImovel:
+      type: object
+      properties:
+        id_imovel:
+          type: integer
+          format: int64
+          example: 01
+        valor_acumulado:
+          type: number
+          format: double
+          example: 0.15
+
+    PagamentoMesAno:
+      type: object
+      properties:
+        mes:
+          type: integer
+          minimum: 1
+          maximum: 12
+          example: 1
+        ano:
+          type: integer
+          example: 2026
+        valor_total:
+          type: number
+          format: double
+          example: 1000.00
+
+    PorcentagemTipoImovel:
+      type: object
+      properties:
+        tipo_imovel:
+          type: string
+          example: "Apartamento"
+        valor_total:
+          type: number
+          format: double
+          example: 1000.00
+        porcentagem:
+          type: number
+          format: double
+          example: 0.15
