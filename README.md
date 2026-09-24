@@ -15,19 +15,21 @@ O banco de dados (gestao_imobiliaria) foi planejado e estruturado pela equipe pa
 ## 🔌 Endpoints
 📍 Rotas Disponíveis
 
+*GET /api-how-vii*  
+Interface interativa da documentação Swagger (OpenAPI lido do arquivo how-vii.yaml).
+
 *GET /pagamentos*  
 Retorna a lista detalhada de pagamentos contendo ID da venda, data, valor, código do imóvel, descrição do imóvel e tipo do imóvel.
 Retorno: JSON
 
-*GET /api-how-vii*  
-Interface interativa da documentação Swagger (OpenAPI lido do arquivo how-vii.yaml).
+*GET /pagamentos_por_imovel*  
+**Gráfico A:** Retorna a somatória de todos os pagamentos para determinado imóvel, organizado por ID do imóvel.
 
-## 📌 Próximas Atualizações (Em desenvolvimento)
-Endpoints em fase de implementação para alimentação de gráficos analíticos:  
+*GET /pagamentos_por_mes_ano*  
+**Gráfico B:** Retorna o total de vendas para cada mês e ano.
 
-- Gráfico A: Soma de todos os pagamentos por ID do imóvel.
-- Gráfico B: Total financeiro de vendas consolidado por mês/ano.
-- Gráfico C: Percentual quantitativo de vendas por tipo de imóvel na série histórica.
+*GET /porcentagem_por_tipo_imovel*  
+**Gráfico C:** Retorna o percentual de vendas por tipo de imóvel.
 
 ## 💻 Como Rodar
 *Bash*  
@@ -39,6 +41,7 @@ cd seu-repositorio
 - npm install express
 - npm install mysql2
 - npm install express swagger-ui-express yamljs
+- npm install cors
 
 **Certifique-se de que o MySQL está rodando na porta 33100 com a base gestao_imobiliaria.**
 
